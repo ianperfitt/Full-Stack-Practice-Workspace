@@ -1,0 +1,6 @@
+INDEX VERSION 1.131+/Users/ianperfitt/Documents/Full-Stack-Practice-Workspace/Core-Java-Practice-Workspace/.metadata/.plugins/org.eclipse.jdt.core
+1865797976.index
+3562261853.index
+3116355510.index
+3468314333.index
+860795207.index

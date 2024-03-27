@@ -1,0 +1,10 @@
+<beans>
+	<bean id="beanOne" class="x.y.ThingOne">
+		<constructor-arg ref="beanTwo"/>
+		<constructor-arg ref="beanThree"/>
+	</bean>
+
+	<bean id="beanTwo" class="x.y.ThingTwo"/>
+
+	<bean id="beanThree" class="x.y.ThingThree"/>
+</beans>

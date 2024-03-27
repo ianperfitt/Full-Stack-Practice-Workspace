@@ -1,0 +1,16 @@
+package com.example.demo;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+
+//makes class an entity
+@Entity
+//explicitly specifies the name of the mapped table.
+@Table(name = "Events")
+public class Event {
+	
+	@Id
+	@GeneratedValue
+	private Long id;
+
+}
