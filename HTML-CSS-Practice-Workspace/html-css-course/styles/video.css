@@ -37,9 +37,36 @@
 
 .video-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  /* grid-template-columns: 1fr 1fr 1fr; */
   column-gap: 16px;
   row-gap: 40px;
+}
+
+/* determines
+how many videos are shown 
+when screen size is <= 750px wide */
+@media (max-width: 750px) {
+  .video-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* determines
+how many videos are shown 
+when screen size >= 751px && <= 999px */
+@media (min-width: 751px) and (max-width: 999px) {
+  .video-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+/* determines
+how many videos are shown 
+when screensize  >= 1000px */
+@media (min-width: 1000px) {
+  .video-grid {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
 }
 
 .video-time {
@@ -48,12 +75,8 @@
   position: absolute;
   bottom: 10px;
   right: 5px;
-  font-family: Roboto, Arial;
   font-size: 12px;
   font-weight: 500;
-  padding-left: 4px;
-  padding-right: 4px;
-  padding-top: 4px;
-  padding-bottom: 4px;
+  padding: 4px;
   border-radius: 2px;
 }
