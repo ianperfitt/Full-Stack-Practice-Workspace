@@ -1,4 +1,4 @@
-package com.practice.languagebasics.controlflow;
+package com.practice.reallybigindex.languagebasics.controlflow;
 
 public class Switch {
 
@@ -10,8 +10,7 @@ public class Switch {
 		case 0: case 1:
 			System.out.println("0");
 		case 2:
-			System.out.println("2");
-			
+			System.out.println("2");		
 		case 3:
 			System.out.println("3");
 			break;
