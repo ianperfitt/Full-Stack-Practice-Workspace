@@ -1,3 +1,10 @@
+<<<<<<< Updated upstream
 INDEX VERSION 1.131+/Users/noochboi/Desktop/Full-Stack-Practice-Workspace/Core-Java-Practice-Workspace/.metadata/.plugins/org.eclipse.jdt.core
 3629809920.index
 2585418274.index
+=======
+INDEX VERSION 1.131+/Users/ianperfitt/Documents/Full-Stack-Practice-Workspace/Core-Java-Practice-Workspace/.metadata/.plugins/org.eclipse.jdt.core
+1865797976.index
+2608197209.index
+3116355510.index
+>>>>>>> Stashed changes
