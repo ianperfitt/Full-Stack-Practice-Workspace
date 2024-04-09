@@ -1,5 +1,8 @@
 package com.practice.misc;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ConvertingDatatypes {
 
 	public static void main(String[] args) {
@@ -70,6 +73,8 @@ public class ConvertingDatatypes {
 //		int i = 98;
 //		c = (char) i;
 //		System.out.println(c);
+
+		List<List<Integer>> list = new ArrayList<>();
 
 	}
 
