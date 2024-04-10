@@ -2,7 +2,7 @@
 \cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
-\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\margl1440\margr1440\vieww7280\viewh13600\viewkind0
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 
 \f0\fs24 \cf0 SELECT * \
@@ -11,12 +11,26 @@ ORDER BY age DESC\
 LIMIT 5;\
 \
 \
-\
+# GROUP BY: use with Count(*) to create a new column that counts the number of occurrences of first column\
 \
 # ORDER BY:  ASC & DESC\
 \
+# ORDER BY: ASC on one column, DESCENDING on another column\
+\
 # LIMIT:  to 5 rows\
 \
-# DISTINCT : \
+# OFFSET: Offset by 2\
 \
-# CASE: Create new column that stores a value based on criteria from existing columns}
+# DISTINCT: Use while selecting two columns but only apply DISTINCT to one column \
+\
+# CASE: Create new column that stores a value based on criteria from existing columns\
+\
+# COUNT: Count the number of users with height > 100\
+\
+# SUM:  up all of the ages of the users.\
+\
+# AVG: Find the average age of the users.\
+\
+# MIN: Find the minimum age of the users\
+\
+# MAX: Find the maximum age of the users}
