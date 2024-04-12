@@ -1,4 +1,4 @@
-package com.practice.collections.interfaces.implementations;
+package com.practice.collections.interfaces.implementations.list;
 
 import java.util.ArrayList;
 import java.util.List;

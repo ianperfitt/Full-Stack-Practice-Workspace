@@ -1,4 +1,4 @@
-package com.practice.collections.interfaces.implementations;
+package com.practice.collections.interfaces.implementations.set;
 
 import java.util.HashSet;
 import java.util.Set;
