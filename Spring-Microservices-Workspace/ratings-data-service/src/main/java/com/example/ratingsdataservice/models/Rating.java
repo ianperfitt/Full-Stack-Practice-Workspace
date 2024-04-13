@@ -1,5 +1,7 @@
 package com.example.ratingsdataservice.models;
 
+import java.util.List;
+
 public class Rating {
 
    private String movieId;
@@ -24,5 +26,18 @@ public class Rating {
 
     public void setRating(int rating) {
         this.rating = rating;
+    }
+
+    public static class UserRating {
+
+        private List<Rating> userRating;
+
+        public List<Rating> getUserRating() {
+            return userRating;
+        }
+
+        public void setUserRating(List<Rating> userRating) {
+            this.userRating = userRating;
+        }
     }
 }
