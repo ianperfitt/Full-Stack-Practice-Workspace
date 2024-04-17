@@ -4244,3 +4244,51 @@ Binding(ALT+COMMAND+R,
 
 !ENTRY org.eclipse.e4.ui.workbench 2 0 2024-04-17 16:50:10.282
 !MESSAGE Removing PartDescriptorImpl with the "org.eclipse.search.SearchResultView" id and the "Classic Search" label.It points to the non available "bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" class. Bundle might have been uninstalled
+
+!ENTRY org.eclipse.ui 2 2 2024-04-17 16:52:01.524
+!MESSAGE Invalid property category path: org.springframework.ide.eclipse.beans.ui.properties.ProjectPropertyPage (bundle: org.springframework.ide.eclipse.xml.namespaces, propertyPage: org.springframework.ide.eclipse.beans.ui.namespaces.projectPropertyPage)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2024-04-17 16:52:18.845
+!MESSAGE Entering DelegatingStreamConnectionProvider()
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2024-04-17 16:52:18.846
+!MESSAGE DelegatingStreamConnectionProvider classloader = org.eclipse.osgi.internal.loader.EquinoxClassLoader@59e53a57[org.springframework.tooling.boot.ls:1.36.0.202206171137(id=921)]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2024-04-17 16:52:18.848
+!MESSAGE SpringBootLanguageServer exists!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2024-04-17 16:52:18.887
+!MESSAGE Instantiating ReusableClasspathListenerHandler
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2024-04-17 16:52:21.781
+!MESSAGE Boot LS startup time from start to initialized: 2923ms
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2024-04-17 16:52:22.018
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.PKpqCoIbisBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2024-04-17 16:52:22.021
+!MESSAGE Setting up ClasspathListenerManager
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2024-04-17 16:52:22.023
+!MESSAGE Scheduling initial event for all projects ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2024-04-17 16:52:22.025
+!MESSAGE Scheduling initial event for all projects DONE
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2024-04-17 16:52:22.025
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.PKpqCoIb => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2024-04-17 16:52:22.026
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2024-04-17 16:52:22.029
+!MESSAGE classpath=2 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2024-04-17 16:52:22.030
+!MESSAGE buffering callback sts4.classpath.PKpqCoIb Topic-Practice false 2
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2024-04-17 16:52:22.030
+!MESSAGE executing callback sts4.classpath.PKpqCoIb 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2024-04-17 16:52:23.241
+!MESSAGE executing callback sts4.classpath.PKpqCoIb SUCCESS [done]
