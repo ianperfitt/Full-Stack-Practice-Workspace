@@ -62,13 +62,10 @@
 	</section>
 	<section name="MavenProjectWizardArtifactPage">
 		<list key="groupId">
-			<item value="com.practice.springbootquickstart"/>
 		</list>
 		<list key="name">
-			<item value="Course API"/>
 		</list>
 		<list key="artifactId">
-			<item value="course-api"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>
