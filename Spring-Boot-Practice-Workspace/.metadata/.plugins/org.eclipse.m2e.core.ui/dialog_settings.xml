@@ -2,6 +2,8 @@
 <section name="Workbench">
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="/Users/ianperfitt/Documents/Full-Stack-Practice-Workspace/Spring-Boot-Practice-Workspace/course-api"/>
+			<item value="/Users/ianperfitt/Documents/Full-Stack-Practice-Workspace/Spring-Boot-Practice-Workspace/course-api-data"/>
 			<item value="/Users/ianperfitt/Documents/Full-Stack-Practice-Workspace/Spring-Boot-Practice-Workspace/demo"/>
 		</list>
 		<list key="projectNameTemplate">
