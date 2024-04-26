@@ -1,36 +1,26 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Solution {
 
-	public static List<List<Integer>> minimumAbsDifference(int[] arr) {
+	public static int numberOfSubarrays(int[] nums, int k) {
+		Map<Integer, Integer> counts = new HashMap<>();
+		counts.put(0, 1);
 
-		Arrays.sort(arr);
+		int ans = 0;
+		int curr = 0;
 
-		List<List<Integer>> solution = new ArrayList<>();
-		int min = Integer.MAX_VALUE;
-		int diff = 0;
-
-		for (int i = 0; i < arr.length - 1; i++) {
-			diff = arr[i + 1] - arr[i];
-			if (diff < min) {
-				min = diff;
-				solution.clear();
-				solution.add(Arrays.asList(arr[i], arr[i + 1]));
-			} else if (diff == min) {
-				solution.add(Arrays.asList(arr[i], arr[i + 1]));
-			}
+		for (int num : nums) {
+			curr += num % 2;
+			ans += counts.getOrDefault(curr - k, 0);
+			counts.put(curr, counts.getOrDefault(curr, 0) + 1);
 		}
-
-		return solution;
+		return ans;
 	}
 
 	public static void main(String[] args) {
 
-		int[] arr = { 3, 8, -10, 23, 19, -4, -14, 27 };
-		System.out.println(minimumAbsDifference(arr));
-
+		int[] arr = { 1, 1, 2, 1, 1 };
+		System.out.println(numberOfSubarrays(arr, 3));
 	}
-
 }
