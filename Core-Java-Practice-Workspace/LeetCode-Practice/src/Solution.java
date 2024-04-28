@@ -1,22 +1,34 @@
-import java.util.HashMap;
-import java.util.Map;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Solution {
 
-	public int largestUniqueNumber(int[] nums) {
+	public int findMaxLength(int[] nums) {
 
-		Map<Integer, Integer> countMap = new HashMap<>();
+		Set<Integer> zeroCountSet = new HashSet<Integer>();
+		Set<Integer> oneCountSet = new HashSet<Integer>();
+		int zeroCount = 0;
+		int oneCount = 0;
+		int max = 0;
 
 		for (int i : nums) {
-			countMap.put(i, countMap.getOrDefault(i, 0) + 1);
-		}
-
-		int largestUnique = -1;
-		for (Integer i : countMap.keySet()) {
-			if (countMap.get(i) == 1 && i > largestUnique) {
-				largestUnique = i;
+			if (i == 1) {
+				oneCountSet.add(++oneCount);
+			} else {
+				zeroCountSet.add(++zeroCount);
 			}
 		}
-		return largestUnique;
+
+		if (oneCountSet.isEmpty() || zeroCountSet.isEmpty()) {
+			return 0;
+		}
+
+		for (int i : zeroCountSet) {
+			if (oneCountSet.contains(i) && i > max) {
+				max = i;
+			}
+		}
+
+		return max * 2;
 	}
 }

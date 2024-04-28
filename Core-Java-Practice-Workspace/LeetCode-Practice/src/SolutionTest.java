@@ -5,26 +5,34 @@ import org.junit.jupiter.api.Test;
 class SolutionTest {
 
 	@Test
-	void largestUniqueIsEight() {
-		int[] arr = { 5, 7, 3, 9, 4, 9, 8, 3, 1 };
+	void shouldEqualTwoEqualOnesAndZeros() {
+		int[] arr = { 0, 1 };
 		Solution solution = new Solution();
 
-		assertEquals(8, solution.largestUniqueNumber(arr));
+		assertEquals(2, solution.findMaxLength(arr));
 	}
 
 	@Test
-	void largestUniqueDoesNotExist() {
-		int[] arr = { 9, 9, 8, 8 };
+	void shouldEqualTwoNonEqualOnesAndZeroes() {
+		int[] arr = { 0, 1, 0 };
 		Solution solution = new Solution();
 
-		assertEquals(-1, solution.largestUniqueNumber(arr));
+		assertEquals(2, solution.findMaxLength(arr));
 	}
 
 	@Test
-	void largestUniqueIsOnlyElement() {
-		int[] arr = { 0 };
+	void shouldEqualFour() {
+		int[] arr = { 0, 1, 1, 0, 1, 1, 1, 0 };
 		Solution solution = new Solution();
 
-		assertEquals(0, solution.largestUniqueNumber(arr));
+		assertEquals(4, solution.findMaxLength(arr));
 	}
+//
+//	@Test
+//	void largestUniqueIsOnlyElement() {
+//		int[] arr = { 0 };
+//		Solution solution = new Solution();
+//
+//		assertEquals(0, solution.findMaxLength(arr));
+//	}
 }
