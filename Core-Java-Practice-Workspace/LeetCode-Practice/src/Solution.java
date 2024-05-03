@@ -1,34 +1,27 @@
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class Solution {
 
-	public int findMaxLength(int[] nums) {
+	public List<List<String>> groupAnagrams(String[] strs) {
 
-		Set<Integer> zeroCountSet = new HashSet<Integer>();
-		Set<Integer> oneCountSet = new HashSet<Integer>();
-		int zeroCount = 0;
-		int oneCount = 0;
-		int max = 0;
+		Map<String, List<String>> map = new HashMap<>();
 
-		for (int i : nums) {
-			if (i == 1) {
-				oneCountSet.add(++oneCount);
-			} else {
-				zeroCountSet.add(++zeroCount);
+		for (String s : strs) {
+			char[] arr = s.toCharArray();
+			Arrays.sort(arr);
+			String key = new String(arr);
+			if (!map.containsKey(key)) {
+				map.put(key, new ArrayList<String>());
 			}
+			map.get(key).add(s);
 		}
 
-		if (oneCountSet.isEmpty() || zeroCountSet.isEmpty()) {
-			return 0;
-		}
+		List<List<String>> list = new ArrayList<>();
 
-		for (int i : zeroCountSet) {
-			if (oneCountSet.contains(i) && i > max) {
-				max = i;
-			}
-		}
-
-		return max * 2;
+		return new ArrayList(map.values());
 	}
 }

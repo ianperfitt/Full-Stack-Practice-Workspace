@@ -1,40 +1,64 @@
+
+import static org.junit.Assert.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class SolutionTest {
 
-	@Test
-	void shouldEqualTwoEqualOnesAndZeros() {
-		int[] arr = { 0, 1 };
-		Solution solution = new Solution();
+	private Solution solution;
 
-		assertEquals(2, solution.findMaxLength(arr));
+	private List<List<String>> s;
+
+	@BeforeEach
+	public void setUp() {
+		solution = new Solution();
+		s = new ArrayList<List<String>>();
 	}
 
 	@Test
-	void shouldEqualTwoNonEqualOnesAndZeroes() {
-		int[] arr = { 0, 1, 0 };
-		Solution solution = new Solution();
+	void shouldContainNonZeroAnswer() {
+		List<String> arr1 = new ArrayList<>();
+		List<String> arr2 = new ArrayList<>();
+		List<String> arr3 = new ArrayList<>();
 
-		assertEquals(2, solution.findMaxLength(arr));
+		arr1.add("bat");
+		s.add(arr1);
+
+		arr2.add("nat");
+		arr2.add("tan");
+		s.add(arr2);
+
+		arr3.add("ate");
+		arr3.add("eat");
+		arr3.add("tea");
+		s.add(arr3);
+
+		String[] strs = { "eat", "tea", "tan", "ate", "nat", "bat" };
+		assertThat(s, Matchers.containsInAnyOrder(solution.groupAnagrams(strs)));
 	}
 
 	@Test
-	void shouldEqualFour() {
-		int[] arr = { 0, 1, 1, 0, 1, 1, 1, 0 };
-		Solution solution = new Solution();
+	void shouldContainEmptyString() {
+		List<String> arr = new ArrayList<>();
+		arr.add("");
+		s.add(arr);
 
-		assertEquals(4, solution.findMaxLength(arr));
+		String[] strs = { "" };
+		assertEquals(s, solution.groupAnagrams(strs));
 	}
 
-//
-//	@Test
-//	void largestUniqueIsOnlyElement() {
-//		int[] arr = { 0 };
-//		Solution solution = new Solution();
-//
-//		assertEquals(0, solution.findMaxLength(arr));
-//	}
+	@Test
+	void shouldContainSingleString() {
+		List<String> arr = new ArrayList<>();
+		arr.add("a");
+		s.add(arr);
 
+		String[] strs = { "a" };
+		assertEquals(s, solution.groupAnagrams(strs));
+	}
 }
