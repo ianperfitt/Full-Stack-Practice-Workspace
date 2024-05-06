@@ -1,31 +1,39 @@
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class SolutionTest {
 
-	@Test
-	void shouldEqualTwoEqualOnesAndZeros() {
-		int[] arr = { 0, 1 };
-		Solution solution = new Solution();
+	private Solution solution;
 
-		assertEquals(2, solution.findMaxLength(arr));
+	@BeforeEach
+	void setup() {
+		solution = new Solution();
 	}
 
 	@Test
-	void shouldEqualTwoNonEqualOnesAndZeroes() {
-		int[] arr = { 0, 1, 0 };
-		Solution solution = new Solution();
+	void shouldEqualFalse() {
+		String ransomNote = "a";
+		String magazine = "b";
 
-		assertEquals(2, solution.findMaxLength(arr));
+		assertEquals(false, solution.canConstruct(ransomNote, magazine));
 	}
 
 	@Test
-	void shouldEqualFour() {
-		int[] arr = { 0, 1, 1, 0, 1, 1, 1, 0 };
-		Solution solution = new Solution();
+	void shouldEqualFalseAlso() {
+		String ransomNote = "aa";
+		String magazine = "ab";
 
-		assertEquals(4, solution.findMaxLength(arr));
+		assertEquals(false, solution.canConstruct(ransomNote, magazine));
+	}
+
+	@Test
+	void shouldEqualTrue() {
+		String ransomNote = "aa";
+		String magazine = "aab";
+
+		assertEquals(true, solution.canConstruct(ransomNote, magazine));
 	}
 
 //

@@ -1,34 +1,28 @@
-import java.util.HashSet;
-import java.util.Set;
+import java.util.HashMap;
+import java.util.Map;
 
-public class Solution {
+class Solution {
+	public boolean canConstruct(String ransomNote, String magazine) {
 
-	public int findMaxLength(int[] nums) {
+		Map<Character, Integer> map = new HashMap<>();
+		int count = 0;
 
-		Set<Integer> zeroCountSet = new HashSet<Integer>();
-		Set<Integer> oneCountSet = new HashSet<Integer>();
-		int zeroCount = 0;
-		int oneCount = 0;
-		int max = 0;
+		for (char c : ransomNote.toCharArray()) {
+			count = map.getOrDefault(c, 0) + 1;
+			map.put(c, count);
+		}
 
-		for (int i : nums) {
-			if (i == 1) {
-				oneCountSet.add(++oneCount);
-			} else {
-				zeroCountSet.add(++zeroCount);
+		for (char c : magazine.toCharArray()) {
+			if (map.containsKey(c)) {
+				count = map.get(c) - 1;
+				if(count == 0) {
+					map.remove(c);
+				}
+				else {
+					map.put(c, count);
+				}
 			}
 		}
-
-		if (oneCountSet.isEmpty() || zeroCountSet.isEmpty()) {
-			return 0;
-		}
-
-		for (int i : zeroCountSet) {
-			if (oneCountSet.contains(i) && i > max) {
-				max = i;
-			}
-		}
-
-		return max * 2;
+		return map.isEmpty();
 	}
 }
