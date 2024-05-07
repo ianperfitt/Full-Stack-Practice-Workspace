@@ -19,6 +19,7 @@ class Solution {
 					tracker.add(c);
 				}
 			}
+			tracker.clear();
 		}
 		return solution;
 	}
