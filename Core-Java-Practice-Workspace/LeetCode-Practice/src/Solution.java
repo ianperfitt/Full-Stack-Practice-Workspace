@@ -1,27 +1,25 @@
-import java.util.HashMap;
-import java.util.Map;
+import java.util.HashSet;
+import java.util.Set;
 
 class Solution {
-	public int lengthOfLongestSubstring(String s) {
 
-		Map<Character, Integer> tracker = new HashMap<>();
+	public static int lengthOfLongestSubstring(String s) {
 
-		char c = 'a';
-		int count = 0;
+		Set<Character> tracker = new HashSet<>();
 		int solution = 0;
 
 		for (int i = 0; i < s.length(); i++) {
-			c = s.charAt(i);
+			for (int j = i; j < s.length(); j++) {
+				char c = s.charAt(j);
 
-			if (!tracker.containsKey(c)) {
-				tracker.put(c, tracker.getOrDefault(c, 0) + 1);
-			} else {
-				tracker.put(c, tracker.get(c) + 1);
-				solution = Math.max(count, count - tracker.get(c) + 1);
+				if (tracker.contains(s.charAt(j))) {
+					break;
+				} else {
+					solution = Math.max(solution, j - i + 1);
+					tracker.add(c);
+				}
 			}
-			++count;
 		}
-
-		return 0;
+		return solution;
 	}
 }
