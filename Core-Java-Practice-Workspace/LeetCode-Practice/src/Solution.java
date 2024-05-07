@@ -25,7 +25,7 @@ class Solution {
 //		return solution;
 //	}
 
-//	// Sliding Window Using Hashmap
+	// Sliding Window Using Hashmap
 //	public static int lengthOfLongestSubstring(String s) {
 //
 //		Map<Character, Integer> chars = new HashMap<>();
@@ -53,7 +53,8 @@ class Solution {
 	public static int lengthOfLongestSubstring(String s) {
 
 		Map<Character, Integer> map = new HashMap<>();
-		int start = 0, len = 0;
+		int start = 0;
+		int len = 0;
 
 		for (int i = 0; i < s.length(); i++) {
 			char c = s.charAt(i);
