@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename resource &apos;Data-Structure-Practice&apos; to &apos;Data-Structure-Implementation-Practice&apos;" description="Rename resource &apos;Data-Structure-Practice&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/Data-Structure-Practice" name="Data-Structure-Implementation-Practice" stamp="1710448811939" updateReferences="true"/>
-</session>
