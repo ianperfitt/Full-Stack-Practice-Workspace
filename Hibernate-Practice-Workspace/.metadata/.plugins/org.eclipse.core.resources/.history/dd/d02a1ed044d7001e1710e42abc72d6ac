@@ -1,7 +1,0 @@
-package com.example.demo;
-
-@Entity
-@Table(name = "Events")
-public class Event {
-
-}
