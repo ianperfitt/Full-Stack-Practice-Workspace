@@ -1,0 +1,517 @@
+{
+    "type": "MySQLNotebook",
+    "version": "1.0",
+    "caption": "DB Notebook",
+    "content": "# CREATE employees TABLE\nCREATE TABLE employees (emp_no INT, department VARCHAR(50), salary INT)\n# POPULATE employees TABLE\nINSERT INTO employees \n    VALUES\n    (1, 'engineering', 8000),\n    (2, 'engineering', 8000),\n    (3, 'sales', 6100),\n    (4, 'sales', 6100),\n    (5, 'customer service', 9000),\n    (6, 'customer service', 9000);\nSELECT * FROM employees;\n# GROUP BY EXAMPLE\nSELECT \n    emp_no,\n    department, \n    salary,\n    AVG(salary) dept_avg,\n    MIN(salary) dept_min,\n    MAX(salary) dept_max\nFROM\n    employees\nGROUP BY\n    emp_no,department, salary\n\n# WINDOW FUNCTION EXAMPLE\nSELECT\n    emp_no,\n    department,\n    salary,\n    AVG(salary) OVER(PARTITION BY department) AS dept_avg,\n    MIN(salary) OVER(PARTITION BY department) AS dept_min,\n    MAX(salary) OVER(PARTITION BY department) AS dept_max,\n    RANK() OVER(ORDER BY salary DESC) AS overall_rank,\n    RANK() OVER(PARTITION BY department ORDER BY salary DESC) AS dept_rank\nFROM\n    employees;\n",
+    "options": {
+        "tabSize": 4,
+        "indentSize": 4,
+        "insertSpaces": true,
+        "defaultEOL": "LF",
+        "trimAutoWhitespace": true
+    },
+    "viewState": {
+        "cursorState": [
+            {
+                "inSelectionMode": false,
+                "selectionStart": {
+                    "lineNumber": 20,
+                    "column": 25
+                },
+                "position": {
+                    "lineNumber": 20,
+                    "column": 25
+                }
+            }
+        ],
+        "viewState": {
+            "scrollLeft": 0,
+            "firstPosition": {
+                "lineNumber": 17,
+                "column": 1
+            },
+            "firstPositionDeltaTop": -7
+        },
+        "contributionsState": {
+            "editor.contrib.folding": {},
+            "editor.contrib.wordHighlighter": false
+        }
+    },
+    "contexts": [
+        {
+            "state": {
+                "start": 1,
+                "end": 2,
+                "language": "mysql",
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 96
+                        },
+                        "contentStart": 25,
+                        "state": 3
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 3,
+                "end": 11,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "22b2bf3a-dc86-4e61-f8b4-2b4f2f6a6460",
+                            "content": "OK, 6 rows affected in 1.981ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 238
+                        },
+                        "contentStart": 27,
+                        "state": 0
+                    },
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 238,
+                            "length": 1
+                        },
+                        "contentStart": 237,
+                        "state": 3
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 12,
+                "end": 12,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "67dbadd4-bec8-4cdc-d12f-43f71009b892"
+                    ]
+                },
+                "currentHeight": 36,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 24
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "cccbba52-7ca1-4a19-94a1-c7d16d3b4c92",
+                    "resultId": "67dbadd4-bec8-4cdc-d12f-43f71009b892",
+                    "rows": [
+                        {
+                            "0": 1,
+                            "1": "engineering",
+                            "2": 8000
+                        },
+                        {
+                            "0": 2,
+                            "1": "engineering",
+                            "2": 8000
+                        },
+                        {
+                            "0": 3,
+                            "1": "sales",
+                            "2": 6100
+                        },
+                        {
+                            "0": 4,
+                            "1": "sales",
+                            "2": 6100
+                        },
+                        {
+                            "0": 5,
+                            "1": "customer service",
+                            "2": 9000
+                        },
+                        {
+                            "0": 6,
+                            "1": "customer service",
+                            "2": 9000
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "emp_no",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4
+                            }
+                        },
+                        {
+                            "title": "department",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "salary",
+                            "field": "2",
+                            "dataType": {
+                                "type": 4
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 6 records retrieved in 0.427ms"
+                    },
+                    "totalRowCount": 6,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "SELECT * FROM employees"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 13,
+                "end": 25,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "9bf5fb67-e341-42fa-bd5f-f1abcb51a090"
+                    ]
+                },
+                "currentHeight": 183,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 203
+                        },
+                        "contentStart": 19,
+                        "state": 3
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "cccbba52-7ca1-4a19-94a1-c7d16d3b4c92",
+                    "resultId": "9bf5fb67-e341-42fa-bd5f-f1abcb51a090",
+                    "rows": [
+                        {
+                            "0": 1,
+                            "1": "engineering",
+                            "2": 8000,
+                            "3": "8000.0000",
+                            "4": 8000,
+                            "5": 8000
+                        },
+                        {
+                            "0": 2,
+                            "1": "engineering",
+                            "2": 8000,
+                            "3": "8000.0000",
+                            "4": 8000,
+                            "5": 8000
+                        },
+                        {
+                            "0": 3,
+                            "1": "sales",
+                            "2": 6100,
+                            "3": "6100.0000",
+                            "4": 6100,
+                            "5": 6100
+                        },
+                        {
+                            "0": 4,
+                            "1": "sales",
+                            "2": 6100,
+                            "3": "6100.0000",
+                            "4": 6100,
+                            "5": 6100
+                        },
+                        {
+                            "0": 5,
+                            "1": "customer service",
+                            "2": 9000,
+                            "3": "9000.0000",
+                            "4": 9000,
+                            "5": 9000
+                        },
+                        {
+                            "0": 6,
+                            "1": "customer service",
+                            "2": 9000,
+                            "3": "9000.0000",
+                            "4": 9000,
+                            "5": 9000
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "emp_no",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4
+                            }
+                        },
+                        {
+                            "title": "department",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "salary",
+                            "field": "2",
+                            "dataType": {
+                                "type": 4
+                            }
+                        },
+                        {
+                            "title": "dept_avg",
+                            "field": "3",
+                            "dataType": {
+                                "type": 10
+                            }
+                        },
+                        {
+                            "title": "dept_min",
+                            "field": "4",
+                            "dataType": {
+                                "type": 4
+                            }
+                        },
+                        {
+                            "title": "dept_max",
+                            "field": "5",
+                            "dataType": {
+                                "type": 4
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 6 records retrieved in 0.613ms"
+                    },
+                    "totalRowCount": 6,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "# GROUP BY EXAMPLE\nSELECT \n    emp_no,\n    department, \n    salary,\n    AVG(salary) dept_avg,\n    MIN(salary) dept_min,\n    MAX(salary) dept_max\nFROM\n    employees\nGROUP BY\n    emp_no,department, salary\n"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 26,
+                "end": 37,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "e39c372e-a02f-4290-caee-930f41261201"
+                    ]
+                },
+                "currentHeight": 190,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 399
+                        },
+                        "contentStart": 26,
+                        "state": 0
+                    },
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 399,
+                            "length": 0
+                        },
+                        "contentStart": 398,
+                        "state": 3
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "cccbba52-7ca1-4a19-94a1-c7d16d3b4c92",
+                    "resultId": "e39c372e-a02f-4290-caee-930f41261201",
+                    "rows": [
+                        {
+                            "0": 5,
+                            "1": "customer service",
+                            "2": 9000,
+                            "3": "9000.0000",
+                            "4": 9000,
+                            "5": 9000,
+                            "6": 1,
+                            "7": 1
+                        },
+                        {
+                            "0": 6,
+                            "1": "customer service",
+                            "2": 9000,
+                            "3": "9000.0000",
+                            "4": 9000,
+                            "5": 9000,
+                            "6": 1,
+                            "7": 1
+                        },
+                        {
+                            "0": 1,
+                            "1": "engineering",
+                            "2": 8000,
+                            "3": "8000.0000",
+                            "4": 8000,
+                            "5": 8000,
+                            "6": 3,
+                            "7": 1
+                        },
+                        {
+                            "0": 2,
+                            "1": "engineering",
+                            "2": 8000,
+                            "3": "8000.0000",
+                            "4": 8000,
+                            "5": 8000,
+                            "6": 3,
+                            "7": 1
+                        },
+                        {
+                            "0": 3,
+                            "1": "sales",
+                            "2": 6100,
+                            "3": "6100.0000",
+                            "4": 6100,
+                            "5": 6100,
+                            "6": 5,
+                            "7": 1
+                        },
+                        {
+                            "0": 4,
+                            "1": "sales",
+                            "2": 6100,
+                            "3": "6100.0000",
+                            "4": 6100,
+                            "5": 6100,
+                            "6": 5,
+                            "7": 1
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "emp_no",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4
+                            }
+                        },
+                        {
+                            "title": "department",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "salary",
+                            "field": "2",
+                            "dataType": {
+                                "type": 4
+                            }
+                        },
+                        {
+                            "title": "dept_avg",
+                            "field": "3",
+                            "dataType": {
+                                "type": 10
+                            }
+                        },
+                        {
+                            "title": "dept_min",
+                            "field": "4",
+                            "dataType": {
+                                "type": 4
+                            }
+                        },
+                        {
+                            "title": "dept_max",
+                            "field": "5",
+                            "dataType": {
+                                "type": 4
+                            }
+                        },
+                        {
+                            "title": "overall_rank",
+                            "field": "6",
+                            "dataType": {
+                                "type": 4
+                            }
+                        },
+                        {
+                            "title": "dept_rank",
+                            "field": "7",
+                            "dataType": {
+                                "type": 4
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 6 records retrieved in 1.184ms"
+                    },
+                    "totalRowCount": 6,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "# WINDOW FUNCTION EXAMPLE\nSELECT\n    emp_no,\n    department,\n    salary,\n    AVG(salary) OVER(PARTITION BY department) AS dept_avg,\n    MIN(salary) OVER(PARTITION BY department) AS dept_min,\n    MAX(salary) OVER(PARTITION BY department) AS dept_max,\n    RANK() OVER(ORDER BY salary DESC) AS overall_rank,\n    RANK() OVER(PARTITION BY department ORDER BY salary DESC) AS dept_rank\nFROM\n    employees"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 38,
+                "end": 38,
+                "language": "mysql",
+                "currentHeight": 180,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 0
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        }
+    ]
+}
